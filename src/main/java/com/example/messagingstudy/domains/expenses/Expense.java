@@ -23,7 +23,6 @@ public class Expense {
     private LocalDateTime date;
 
      protected Expense() {
-        // construtor vazio obrigatório para o JPA
     }
 
 }

@@ -3,7 +3,7 @@ package com.example.messagingstudy.aplication.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.messagingstudy.aplication.DTO.ExpenseDTO;
+import com.example.messagingstudy.aplication.dto.ExpenseDTO;
 import com.example.messagingstudy.aplication.services.ExpenseService;
 
 import java.util.UUID;

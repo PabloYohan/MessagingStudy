@@ -1,4 +1,4 @@
-package com.example.messagingstudy.aplication.DTO;
+package com.example.messagingstudy.aplication.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
