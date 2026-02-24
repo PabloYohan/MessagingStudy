@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @Table(name = "expense_created_event")
-@AllArgsConstructor
 @NoArgsConstructor
 public class ExpenseCreatedEvent {
     @Id
@@ -33,4 +32,21 @@ public class ExpenseCreatedEvent {
 
     @Column(name = "occurredat")
     private Instant occurredAt;
+
+    private boolean processed;
+    @Column(name = "processed_at")
+    private Instant processedAt;
+
+    public ExpenseCreatedEvent(UUID Id,UUID expenseId, BigDecimal amount, LocalDateTime date, Instant occurredAt){
+        this.Id = Id;
+        this.expenseId = expenseId;
+        this.amount = amount;
+        this.date = date;
+        this.occurredAt = occurredAt;
+    }
+
+    public void MarkAsProcessed(){
+        processed = true;
+        processedAt = Instant.now();
+    }
 }
