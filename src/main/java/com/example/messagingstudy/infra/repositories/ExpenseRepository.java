@@ -1,0 +1,10 @@
+package com.example.messagingstudy.infra.repositories;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.messagingstudy.domains.expenses.Expense;
+
+public interface ExpenseRepository extends JpaRepository<Expense, UUID> {
+    
+}
