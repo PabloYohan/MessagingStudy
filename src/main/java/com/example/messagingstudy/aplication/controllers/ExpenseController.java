@@ -24,7 +24,7 @@ public class ExpenseController {
     @PostMapping
     public ResponseEntity<UUID> ExpenseCreate(@RequestBody ExpenseDTO body) {
 
-        UUID id = expenseService.createExpese(body.amount(), body.date());
+        UUID id = expenseService.createExpense(body.amount(), body.date());
         
         return ResponseEntity.status(201).body(id);
     }

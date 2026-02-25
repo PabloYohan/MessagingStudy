@@ -29,7 +29,7 @@ public class ExpenseService {
     }
     
     @Transactional
-    public UUID createExpese(BigDecimal amount, LocalDateTime date){
+    public UUID createExpense(BigDecimal amount, LocalDateTime date){
         UUID id = UUID.randomUUID();
         Expense expense = new Expense(id, amount, date);
         expenseRepository.save(expense);
