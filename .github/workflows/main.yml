@@ -11,6 +11,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: expense_db
+          POSTGRES_USER: expense_user
+          POSTGRES_PASSWORD: expense_pass
+        ports:
+          - 5432:5432
+
+      rabbitmq:
+        image: rabbitmq:3-management
+        ports:
+          - 5672:5672
+
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
