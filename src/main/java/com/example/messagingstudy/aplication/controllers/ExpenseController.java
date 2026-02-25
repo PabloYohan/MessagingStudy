@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.messagingstudy.aplication.dto.ExpenseDTO;
 import com.example.messagingstudy.aplication.services.ExpenseService;
 
+import jakarta.validation.Valid;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
@@ -22,11 +26,13 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public ResponseEntity<UUID> ExpenseCreate(@RequestBody ExpenseDTO body) {
+    public ResponseEntity<Map<String, Object>> ExpenseCreate(@Valid @RequestBody ExpenseDTO body) {
 
         UUID id = expenseService.createExpense(body.amount(), body.date());
+        Map<String, Object> response = new HashMap<>();
+        response.put("id", id.toString());
         
-        return ResponseEntity.status(201).body(id);
+        return ResponseEntity.status(201).body(response);
     }
     
 }
